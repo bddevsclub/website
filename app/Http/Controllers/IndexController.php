@@ -29,17 +29,6 @@ class IndexController extends Controller
         );
     }
 
-    public function getWebinar($id)
-    {
-        $webinar = Webinar::find($id);
-        if ($webinar) {
-            return view('index/webinar', ['webinar' => $webinar]);
-        } else {
-            abort(404);
-        }
-
-
-    }
 
 
 }

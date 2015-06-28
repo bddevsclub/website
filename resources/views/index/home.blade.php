@@ -3,7 +3,7 @@
 @section('body')
     <div class="container">
         <div class="col-md-offset-1 col-md-7">
-            <h4><a href="">{{ $last_webinar->title }}</a></h4>
+            <h4><a href="{{ route('webinar.show', [$last_webinar->id])  }}">{{ $last_webinar->title }}</a></h4>
             {!! $last_webinar->video_embed !!} <br/><br/>
             <hr/>
             <strong>{{ date('Y-m-d H:i', strtotime($last_webinar->date_time))  }}</strong><br/>
@@ -27,7 +27,8 @@
             @if($next_webinars)
                 <ul>
                     @foreach($next_webinars as $event)
-                        <li><a href="{% url 'webinar_view' event.id %}">{{ $event->title }}</a></li>
+                        <li><a href="{{ route('webinar.show', [$event->id])  }}">{{ $event->title }}</a>
+                            ({{ date('M d', strtotime($event->date_time))  }})</li>
 
                     @endforeach
                 </ul>

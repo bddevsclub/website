@@ -58,9 +58,9 @@ class WebinarController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function show(Webinar $webinar)
     {
-        //
+        return view('webinar/show', ['webinar' => $webinar]);
     }
 
     /**
