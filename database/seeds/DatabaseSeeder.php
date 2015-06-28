@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(WebinarSeeder::class);
+        $this->call(GroupsSeeder::class);
 
         Model::reguard();
     }
