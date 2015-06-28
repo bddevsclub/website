@@ -1,27 +1,20 @@
-## Laravel PHP Framework
+## BD Devs Club Website
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+### Setup
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+This is a typical Laravel 5.1 app. I recommend you create a Virtual Host for it. 
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Create a `.env` file. Use the example `.env.example` file to create it. Add your configurations here. You must configure a database connection before proceeding. 
 
-## Official Documentation
+### Data Migration and Seeding
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+		php artisan migrate
+		php artisan db:seed
+		
 
-## Contributing
+### Common Conventions
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+* Use implicit controllers, keep the routes.php file clean.
+* Create your models inside `App\Models` namespace.
+* Views should be placed inside directories dedicated to each controller. For example all the views for `IndexController` should be inside `index` directory under the main directory. 
+* Assets should go inside `public/static`.

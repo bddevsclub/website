@@ -20,21 +20,20 @@ class IndexController extends Controller
 
         $groups = FacebookGroup::all();
 
-        return view('home', [
-            'last_webinar' => $lastWebinar,
-            'next_webinars' => $nextWebinars,
-            'groups' => $groups
-        ]);
+        return view('index/home',
+            [
+                'last_webinar' => $lastWebinar,
+                'next_webinars' => $nextWebinars,
+                'groups' => $groups
+            ]
+        );
     }
 
     public function getWebinar($id)
     {
         $webinar = Webinar::find($id);
-
         if ($webinar) {
-            return view('webinar', [
-                'webinar' => $webinar
-            ]);
+            return view('index/webinar', ['webinar' => $webinar]);
         } else {
             abort(404);
         }
