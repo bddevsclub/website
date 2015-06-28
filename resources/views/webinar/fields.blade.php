@@ -2,6 +2,13 @@
     <script type="text/javascript" src="/static/datetimepicker/jquery.datetimepicker.js">
     </script>
 
+    <script>
+        $(document).ready(function () {
+            $("#date_time").datetimepicker();
+        });
+
+    </script>
+
     <link rel="stylesheet" href="/static/datetimepicker/jquery.datetimepicker.css"/>
 @endsection
 
