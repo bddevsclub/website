@@ -30,6 +30,7 @@ class RouteServiceProvider extends ServiceProvider
 
         //Route Model Binding
         $router->model('fbgroup', \App\Models\FacebookGroup::class);
+        $router->model('webinar', \App\Models\Webinar::class);
     }
 
     /**
