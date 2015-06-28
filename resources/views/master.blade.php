@@ -11,6 +11,7 @@
     <script src="/static/js/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
 
+    @yield('header')
 
 </head>
 <body>
