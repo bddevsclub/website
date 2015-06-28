@@ -12,9 +12,17 @@ Create a `.env` file. Use the example `.env.example` file to create it. Add your
 		php artisan db:seed
 		
 
+### Create Admin User
+
+		php artisan user:create
+
+### Admin Views
+
+Go to: `/auth/login` to login.
+
 ### Common Conventions
 
-* Use implicit controllers, keep the routes.php file clean.
+* Avoid implicit controllers, use resources. keep the routes.php file clean. 
 * Create your models inside `App\Models` namespace.
 * Views should be placed inside directories dedicated to each controller. For example all the views for `IndexController` should be inside `index` directory under the main directory. 
 * Assets should go inside `public/static`.
