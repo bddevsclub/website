@@ -17,16 +17,23 @@
 
             <ul class="nav navbar-nav navbar-right">
 
+                <li><a href="/">Home</a></li>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        Menu
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/">Home</a></li>
-                    </ul>
-                </li>
+                @if(Auth::user())
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Admin
+                            <span class="caret"></span></a>
 
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ route('webinar.index')  }}">Webinars</a></li>
+                            <li><a href="{{ route('fbgroup.index')  }}">Facebook Groups</a></li>
+
+                            <li><a href="{{ route('auth.logout') }}">Logout</a></li>
+
+                        </ul>
+                    </li>
+                @endif
 
             </ul>
         </div>
