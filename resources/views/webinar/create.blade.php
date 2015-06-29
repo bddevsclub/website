@@ -14,6 +14,7 @@
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-5">
                 {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('webinar.index') }}" class="btn btn-warning">Cancel</a>
             </div>
         </div>
 
