@@ -141,16 +141,13 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
-
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-
-
+        Former\FormerServiceProvider::class,
     ],
 
     /*
@@ -201,7 +198,7 @@ return [
 
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
-
+        'Former'    => Former\Facades\Former::class,
     ],
 
 ];

@@ -4,10 +4,17 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/formers/former.git"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "laravelcollective/html": "5.1.*"
+        "laravelcollective/html": "5.1.*",
+        "anahkiasen/former": "4.0.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
