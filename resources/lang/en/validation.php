@@ -104,6 +104,8 @@ return [
     */
 
     'attributes' => [
+        'email' => 'Email',
+        'password' => 'Password',
         'fbgroup_name' => 'Facebook Group Name',
         'fbgroup_url' => 'Facebook Group URL',
         'webinar_title' => 'Title',

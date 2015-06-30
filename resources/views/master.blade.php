@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title', 'BD Devs Club')</title>
+    <title>@yield('title', trans('texts.site_name'))</title>
 
     <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css"/>

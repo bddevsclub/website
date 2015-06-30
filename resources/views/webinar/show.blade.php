@@ -27,14 +27,9 @@
                         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
                     })();
                 </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
-                                                                  rel="nofollow">comments
-                        powered by Disqus.</a></noscript>
+                <noscript>{{!! trans('texts.disqus_noscript') !!}}</noscript>
             </div>
-
         </div>
-
-
     </div>
 
 @endsection

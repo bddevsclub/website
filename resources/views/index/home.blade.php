@@ -9,12 +9,11 @@
             <strong>{{ date('Y-m-d H:i', strtotime($last_webinar->date_time))  }}</strong><br/>
             {{ $last_webinar->description }} <br/><br/>
             <hr/>
-
         </div>
 
 
         <div class="col-md-4">
-            <h4>Facebook Groups:</h4>
+            <h4>{{ trans_choice('models.fbgroup',2) }}:</h4>
             <ul>
                 @foreach($groups as $group)
                     <li><a target="_blank" href="{{ $group->url }}">{{ $group->name }}</a></li>
@@ -22,7 +21,7 @@
             </ul>
 
 
-            <h4>Coming Sessions:</h4>
+            <h4>{{ trans('texts.upcoming', ['session' => trans_choice('models.webinar',2)])}}:</h4>
 
             @if($next_webinars)
                 <ul>
@@ -33,7 +32,7 @@
                     @endforeach
                 </ul>
             @else
-                No upcoming sessions!
+                {{ trans('texts.no_upcoming', ['session' => trans_choice('models.webinar',2)])}}
             @endif
 
         </div>
