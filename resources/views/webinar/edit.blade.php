@@ -6,7 +6,7 @@
         <hr/>
 
         <div class="col-md-8 col-md-offset-2">
-            {!! Former::horizonal_open()->action(route('webinar.update', $webinar->id))->method("PUT") !!}
+            {!! Former::horizonal_open()->action(route('webinar.update', $webinar['id']))->method("PUT") !!}
             {!! Former::populate($webinar) !!}
             @include('webinar.fields')
             {!! Former::actions()

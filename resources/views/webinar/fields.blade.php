@@ -8,7 +8,7 @@
     </script>
 @endsection
 
-{!! Former::text('title') !!}
-{!! Former::text('date_time') !!}
-{!! Former::textarea('video_embed')->rows(5) !!}
-{!! Former::text('description') !!}
+{!! Former::text('webinar_title') !!}
+{!! Former::text('webinar_date_time') !!}
+{!! Former::textarea('webinar_video_embed')->rows(5) !!}
+{!! Former::text('webinar_description') !!}

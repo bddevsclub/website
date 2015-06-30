@@ -6,9 +6,9 @@
         <hr/>
 
         <div class="col-md-8 col-md-offset-2">
-            {!! Former::horizonal_open()->action(route('fbgroup.update', $fbgroup->id))->method("PUT") !!}
+            {!! Former::horizonal_open()->action(route('fbgroup.update', $fbgroup['id']))->method("PUT") !!}
             {!! Former::populate($fbgroup) !!}
-            @include('fbgroup._form')
+            @include('fbgroup.fields')
             {!! Former::actions()
                 ->large_primary_submit('update')
                 ->large_inverse_reset('reset')  !!}

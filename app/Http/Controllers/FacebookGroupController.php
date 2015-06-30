@@ -10,6 +10,8 @@ use App\Http\Requests;
 
 class FacebookGroupController extends Controller
 {
+    protected $attributePrefix = "fbgroup";
+
     /**
      * Display a listing of the resource.
      *
@@ -39,12 +41,12 @@ class FacebookGroupController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $this->validateRequest($request, [
             'name'  => 'required',
             'url'   => 'required'
         ]);
 
-        FacebookGroup::create($request->all());
+        FacebookGroup::create($this->requestToAttributes($request));
 
         return redirect('/fbgroup');
     }
@@ -57,7 +59,8 @@ class FacebookGroupController extends Controller
      */
     public function edit(FacebookGroup $fbgroup)
     {
-        return view('fbgroup.edit', compact('fbgroup'));
+        $attributes = $this->modelToAttributes($fbgroup);
+        return view('fbgroup.edit', ['fbgroup' => $attributes]);
     }
 
     /**
@@ -68,14 +71,14 @@ class FacebookGroupController extends Controller
      */
     public function update(FacebookGroup $fbgroup, Request $request)
     {
-        $this->validate($request, [
+        $this->validateRequest($request, [
             'name'  => 'required',
             'url'   => 'required'
         ]);
 
-        $fbgroup->update($request->all());
+        $fbgroup->update($this->requestToAttributes($request));
 
-        return redirect('/fbgroup');
+        return redirect(route('fbgroup.index'));
     }
 
     /**
@@ -88,6 +91,6 @@ class FacebookGroupController extends Controller
     {
         $fbgroup->delete();
 
-        return redirect('/fbgroup');
+        return redirect(route('fbgroup.index'));
     }
 }

@@ -11,6 +11,8 @@ use App\Models\Webinar;
 
 class WebinarController extends Controller
 {
+    protected $attributePrefix = "webinar";
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +21,7 @@ class WebinarController extends Controller
     public function index()
     {
         $webinarLists = Webinar::all();
-        return view('webinar/index', ['webinars' => $webinarLists]);
+        return view('webinar.index', ['webinars' => $webinarLists]);
     }
 
     /**
@@ -29,7 +31,7 @@ class WebinarController extends Controller
      */
     public function create()
     {
-        return view('webinar/create');
+        return view('webinar.create');
     }
 
     /**
@@ -39,14 +41,14 @@ class WebinarController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $this->validateRequest($request, [
             'title' => 'required',
             'description' => 'required',
             'video_embed' => 'required',
             'date_time' => 'required|date',
         ]);
 
-        Webinar::create($request->all());
+        Webinar::create($this->requestToAttributes($request));
 
         return redirect(route('webinar.index'));
     }
@@ -60,7 +62,7 @@ class WebinarController extends Controller
      */
     public function show(Webinar $webinar)
     {
-        return view('webinar/show', ['webinar' => $webinar]);
+        return view('webinar.show', ['webinar' => $webinar]);
     }
 
     /**
@@ -71,7 +73,8 @@ class WebinarController extends Controller
      */
     public function edit(Webinar $webinar)
     {
-        return view('webinar/edit', ['webinar' => $webinar]);
+        $attributes = $this->modelToAttributes($webinar);
+        return view('webinar.edit', ['webinar' => $attributes]);
     }
 
     /**
@@ -82,14 +85,14 @@ class WebinarController extends Controller
      */
     public function update(Webinar $webinar, Request $request)
     {
-        $this->validate($request, [
+        $this->validateRequest($request, [
             'title' => 'required',
             'description' => 'required',
             'video_embed' => 'required',
             'date_time' => 'required|date',
         ]);
 
-        $webinar->update($request->all());
+        $webinar->update($this->requestToAttributes($request));
 
         return redirect(route('webinar.index'));
     }

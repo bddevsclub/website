@@ -103,6 +103,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'fbgroup_name' => 'Facebook Group Name',
+        'fbgroup_url' => 'Facebook Group URL',
+        'webinar_title' => 'Title',
+        'webinar_date_time' => 'Scheduled Date Time',
+        'webinar_video_embed' => 'Video Embed Code',
+        'webinar_description' => 'Description'
+    ],
 
 ];
